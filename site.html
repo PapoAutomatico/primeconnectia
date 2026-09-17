@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrimeConnect IA - Automação de WhatsApp & Chatbot Inteligente</title>
+  <meta name="description" content="Automatize suas vendas e atendimento no WhatsApp com a PrimeConnect IA. Chatbots inteligentes 24/7, servidores sob medida e soluções personalizadas." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0c1317;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #2a3942;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="bg-slate-950 text-white text-xs py-2 px-4 border-b border-blue-900/50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-blue-600/30 text-cyan-300 font-semibold border border-cyan-500/30 text-[11px]">
+          <i data-lucide="sparkles" class="w-3 h-3 text-cyan-400"></i>
+          Ativação Rápida em até 48h
+        </span>
+        <span class="hidden md:inline text-slate-300">
+          Servidores dedicados com estabilidade e monitoramento ativo para WhatsApp
+        </span>
+      </div>
+
+      <div class="flex items-center gap-4 text-[11px]">
+        <a href="tel:5538999422060" class="flex items-center gap-1 text-slate-300 hover:text-cyan-300 transition-colors">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>(38) 9 9942-2060</span>
+        </a>
+        <span class="text-slate-700 hidden sm:inline">|</span>
+        <a href="https://instagram.com/prime.connectia" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-1 text-slate-300 hover:text-cyan-300 transition-colors">
+          <span>@prime.connectia</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HEADER / LOGO NO TOPO ================= -->
+  <header id="main-header" class="sticky top-0 z-40 bg-white py-4 border-b border-slate-100 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- Logotipo oficial no topo -->
+      <a href="#inicio" class="flex items-center gap-2.5 select-none focus:outline-none group">
+        <div class="w-10 h-10 flex-shrink-0 group-hover:scale-105 transition-transform">
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_4px_12px_rgba(0,150,255,0.35)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bubbleGrad" x1="10" y1="10" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#00E5FF" />
+                <stop offset="50%" stopColor="#0088FF" />
+                <stop offset="100%" stopColor="#0052D4" />
+              </linearGradient>
+              <linearGradient id="screenGrad" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#0B1528" />
+                <stop offset="100%" stopColor="#050B14" />
+              </linearGradient>
+              <linearGradient id="eyeGlow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#00FFC2" />
+                <stop offset="100%" stopColor="#00D2FF" />
+              </linearGradient>
+            </defs>
+            <path d="M20 16C13.3726 16 8 21.3726 8 28V68C8 74.6274 13.3726 80 20 80H34L26 94L50 80H80C86.6274 80 92 74.6274 92 68V28C92 21.3726 86.6274 16 80 16H20Z" fill="url(#bubbleGrad)" />
+            <rect x="22" y="26" width="56" height="42" rx="12" fill="url(#screenGrad)" stroke="#38BDF8" strokeWidth="2.5" />
+            <circle cx="50" cy="20" r="3.5" fill="#00E5FF" />
+            <line x1="50" y1="23" x2="50" y2="26" stroke="#00E5FF" strokeWidth="2" strokeLinecap="round" />
+            <rect x="18" y="38" width="4" height="18" rx="2" fill="#00D2FF" />
+            <rect x="78" y="38" width="4" height="18" rx="2" fill="#00D2FF" />
+            <rect x="33" y="39" width="10" height="9" rx="3.5" fill="url(#eyeGlow)" />
+            <rect x="57" y="39" width="10" height="9" rx="3.5" fill="url(#eyeGlow)" />
+            <circle cx="35.5" cy="41.5" r="1.5" fill="#FFFFFF" />
+            <circle cx="59.5" cy="41.5" r="1.5" fill="#FFFFFF" />
+            <line x1="47" y1="44" x2="53" y2="44" stroke="#38BDF8" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+            <path d="M44 54C47 57 53 57 56 54" stroke="#00FFC2" strokeWidth="2.5" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <div class="font-extrabold tracking-tight leading-none text-xl text-slate-900">
+            Prime<span class="text-blue-600">Connect</span>
+            <span class="ml-1.5 px-1.5 py-0.5 text-xs font-bold rounded bg-gradient-to-r from-blue-600 to-cyan-500 text-white uppercase tracking-wider inline-block">
+              IA
+            </span>
+          </div>
+          <span class="font-semibold uppercase text-[10px] tracking-widest text-blue-600 mt-0.5">
+            CONECTE. AUTOMATIZE. SIMPLIFIQUE
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
+        <a href="#inicio" class="hover:text-blue-600 transition-colors">Início</a>
+        <a href="#como-funciona" class="hover:text-blue-600 transition-colors">Como Funciona</a>
+        <a href="#planos" class="text-blue-600 font-bold hover:text-blue-700 transition-colors flex items-center gap-1.5">
+          Planos & Valores
+          <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-blue-100 text-blue-700 font-bold uppercase">
+            3 Opções
+          </span>
+        </a>
+        <a href="#depoimentos" class="hover:text-blue-600 transition-colors">Depoimentos</a>
+        <a href="#blog" class="hover:text-blue-600 transition-colors">Blog IA</a>
+        <a href="#faq" class="hover:text-blue-600 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- CTA Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#agendamento" class="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-xl transition-all border border-blue-200">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-blue-600"></i>
+          <span>Agendar Demonstração</span>
+        </a>
+        <a href="https://wa.me/5538999422060?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20PrimeConnect%20IA%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl shadow-md shadow-blue-500/20 transition-all">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>WhatsApp Oficial</span>
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="mobile-toggle-html" class="lg:hidden p-2 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-slate-100">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu-html" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-xl">
+      <nav class="flex flex-col space-y-2 text-sm font-semibold">
+        <a href="#inicio" class="px-3 py-2 rounded-lg text-slate-800 hover:bg-blue-50 hover:text-blue-600">Início</a>
+        <a href="#como-funciona" class="px-3 py-2 rounded-lg text-slate-800 hover:bg-blue-50 hover:text-blue-600">Como Funciona</a>
+        <a href="#planos" class="px-3 py-2 rounded-lg text-blue-600 bg-blue-50 font-bold flex items-center justify-between">
+          <span>Planos & Valores</span>
+          <span class="text-[10px] bg-blue-200 text-blue-800 px-2 py-0.5 rounded-full">Servidores Dedicados</span>
+        </a>
+        <a href="#depoimentos" class="px-3 py-2 rounded-lg text-slate-800 hover:bg-blue-50 hover:text-blue-600">Depoimentos</a>
+        <a href="#blog" class="px-3 py-2 rounded-lg text-slate-800 hover:bg-blue-50 hover:text-blue-600">Blog IA</a>
+        <a href="#faq" class="px-3 py-2 rounded-lg text-slate-800 hover:bg-blue-50 hover:text-blue-600">FAQ</a>
+      </nav>
+      <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+        <a href="#agendamento" class="w-full py-2.5 px-4 rounded-xl bg-blue-50 text-blue-700 font-bold text-xs flex items-center justify-center gap-2 border border-blue-200">
+          <i data-lucide="calendar" class="w-4 h-4 text-blue-600"></i>
+          Agendar Demonstração Gratuita
+        </a>
+        <a href="https://wa.me/5538999422060" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-blue-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+          Falar no WhatsApp ((38) 9 9942-2060)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="inicio" class="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 bg-gradient-to-b from-white via-blue-50/30 to-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Value Proposition -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold tracking-wide shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            <span class="uppercase">Vendas & Automação com IA</span>
+            <span class="text-slate-300">•</span>
+            <span class="text-slate-600 font-medium">PrimeConnect IA</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.15]">
+            Transforme seu <span class="text-blue-600">WhatsApp</span> em uma esteira de vendas
+            <span class="underline decoration-cyan-400 decoration-4 underline-offset-4">24/7 com IA</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Chega de perder clientes por demora no atendimento. Nossos chatbots inteligentes qualificam leads, respondem dúvidas instantaneamente e fecham vendas com a linguagem da sua empresa e servidores dedicados sob medida.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 text-xs font-semibold text-slate-700">
+            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-xs">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
+              <span>Resposta em &lt; 3 segundos</span>
+            </div>
+            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-xs">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
+              <span>Servidores dedicados e estáveis</span>
+            </div>
+            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-xs">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
+              <span>Sem risco de bloqueios comuns</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <a href="#agendamento" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-blue-600 via-blue-700 to-slate-900 hover:from-blue-700 hover:to-slate-950 shadow-lg shadow-blue-500/25 transition-all">
+              <i data-lucide="calendar" class="w-4 h-4 text-cyan-300"></i>
+              <span>Agendar Demonstração Rápida</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#planos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-xs transition-all">
+              <span>Ver Planos & Servidores</span>
+            </a>
+          </div>
+
+          <div class="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-slate-500">
+            <span class="flex items-center gap-1">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i>
+              Ativação personalizada e homologada
+            </span>
+            <span>•</span>
+            <span class="flex items-center gap-1">
+              <i data-lucide="zap" class="w-4 h-4 text-blue-500"></i>
+              WhatsApp: (38) 9 9942-2060
+            </span>
+          </div>
+        </div>
+
+        <!-- Interactive WhatsApp Simulator -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+          <div class="relative mx-auto w-full max-w-[360px] sm:max-w-[390px] rounded-[36px] bg-slate-900 p-3.5 shadow-2xl shadow-blue-500/20 ring-1 ring-white/20">
+            <!-- Speaker notch -->
+            <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-4 bg-slate-800 rounded-full z-20 flex items-center justify-center">
+              <div class="w-10 h-1.5 bg-slate-700 rounded-full"></div>
+              <div class="w-2.5 h-2.5 ml-3 rounded-full bg-slate-900 border border-slate-700"></div>
+            </div>
+
+            <!-- WhatsApp Screen Frame -->
+            <div class="rounded-[28px] overflow-hidden bg-[#0c1317] flex flex-col h-[540px] relative border border-slate-800 text-slate-100">
+              <!-- WhatsApp Top Header -->
+              <div class="bg-[#1f2c34] px-3.5 pt-7 pb-3 flex items-center justify-between border-b border-[#2a3942] z-10">
+                <div class="flex items-center gap-2.5">
+                  <div class="relative">
+                    <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 p-0.5 flex items-center justify-center">
+                      <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
+                        <i data-lucide="bot" class="w-5 h-5 text-cyan-400"></i>
+                      </div>
+                    </div>
+                    <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-[#1f2c34]"></span>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-1.5">
+                      <h4 class="font-bold text-xs text-slate-100 leading-none">PrimeConnect IA</h4>
+                      <i data-lucide="sparkles" class="w-3 h-3 text-cyan-400"></i>
+                    </div>
+                    <p class="text-[10px] text-emerald-400 font-medium mt-0.5">online 24/7 • verificado</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-1 text-slate-400">
+                  <a href="https://wa.me/5538999422060" target="_blank" rel="noopener noreferrer" class="p-1.5 text-emerald-400 hover:bg-emerald-500/10 rounded-full transition-colors">
+                    <i data-lucide="phone-call" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Banner -->
+              <div class="bg-blue-600/20 text-cyan-300 text-[10px] px-3 py-1 text-center font-medium border-b border-blue-500/20 flex items-center justify-center gap-1.5">
+                <i data-lucide="zap" class="w-3 h-3 text-cyan-400"></i>
+                <span>Simulador Interativo • Teste o chatbot agora</span>
+              </div>
+
+              <!-- Messages Container -->
+              <div id="sim-messages-html" class="flex-1 p-3 overflow-y-auto space-y-2.5 custom-scrollbar bg-[radial-gradient(#1f2c34_1px,transparent_1px)] [background-size:16px_16px] bg-[#0c1317]">
+                <!-- Initial Bot Message -->
+                <div class="flex flex-col items-start">
+                  <div class="max-w-[85%] rounded-2xl px-3.5 py-2 text-xs leading-relaxed bg-[#202c33] text-slate-100 rounded-bl-xs border border-white/5 shadow-md">
+                    <p>👋 Olá! Bem-vindo à demonstração do <strong>PrimeConnect IA</strong>. Eu sou o assistente inteligente que atende seus clientes no WhatsApp 24h por dia!</p>
+                    <div class="text-[9px] text-slate-400 text-right mt-1">21:30</div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-start">
+                  <div class="max-w-[85%] rounded-2xl px-3.5 py-2 text-xs leading-relaxed bg-[#202c33] text-slate-100 rounded-bl-xs border border-white/5 shadow-md">
+                    <p>Como posso ajudar sua empresa a vender mais e eliminar tempo de resposta hoje?</p>
+                    <div class="text-[9px] text-slate-400 text-right mt-1">21:30</div>
+                  </div>
+                  <!-- Quick Buttons -->
+                  <div class="flex flex-wrap gap-1.5 mt-2 max-w-[90%]">
+                    <button onclick="sendSimText('Quero ver os Planos 💳')" class="px-2.5 py-1.5 rounded-lg bg-blue-600/30 hover:bg-blue-600/50 text-cyan-300 border border-cyan-500/30 text-[11px] font-medium transition-all text-left">
+                      Quero ver os Planos 💳
+                    </button>
+                    <button onclick="sendSimText('Agendar Demonstração 📅')" class="px-2.5 py-1.5 rounded-lg bg-blue-600/30 hover:bg-blue-600/50 text-cyan-300 border border-cyan-500/30 text-[11px] font-medium transition-all text-left">
+                      Agendar Demonstração 📅
+                    </button>
+                    <button onclick="sendSimText('Como a IA funciona? 🤖')" class="px-2.5 py-1.5 rounded-lg bg-blue-600/30 hover:bg-blue-600/50 text-cyan-300 border border-cyan-500/30 text-[11px] font-medium transition-all text-left">
+                      Como a IA funciona? 🤖
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Input bar -->
+              <div class="p-2.5 bg-[#1f2c34] border-t border-[#2a3942] flex items-center gap-2">
+                <input id="sim-input-html" type="text" placeholder="Digite uma mensagem ou pergunta..." class="flex-1 bg-[#2a3942] text-xs text-white placeholder-slate-400 rounded-full px-4 py-2 focus:outline-none focus:ring-1 focus:ring-cyan-400" onkeydown="if(event.key==='Enter') handleSimSendHtml()" />
+                <button onclick="handleSimSendHtml()" class="w-8 h-8 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center transition-all flex-shrink-0">
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PLANOS DETALHADOS ================= -->
+  <section id="planos" class="py-20 bg-slate-50 relative overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="server" class="w-3.5 h-3.5"></i>
+          Infraestrutura & Automação Sob Medida
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight">
+          Servidores Sob Medida: Planos, Criação e Mensalidade
+        </h2>
+        <p class="mt-4 text-slate-600 text-base sm:text-lg">
+          Transparência total e estabilidade garantida. Escolha a infraestrutura ideal para a escala do seu negócio com suporte comercial, técnico e preventivo.
+        </p>
+      </div>
+
+      <!-- Grid dos 3 Planos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-14">
+        
+        <!-- PLANO START -->
+        <div class="relative rounded-3xl p-8 bg-white text-slate-900 border border-slate-200 shadow-lg flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-extrabold tracking-tight text-slate-900">PLANO START</h3>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">Servidor Básico</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-6">
+              Ideal para autônomos e pequenos negócios que desejam iniciar a automação no WhatsApp com estabilidade.
+            </p>
+
+            <div class="p-4 rounded-2xl mb-6 bg-slate-50 border border-slate-200">
+              <div class="flex items-baseline justify-between border-b pb-3 mb-3 border-slate-200">
+                <span class="text-xs font-semibold text-slate-600">Criação & Setup:</span>
+                <span class="text-lg font-extrabold text-slate-900">R$ 300</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <div>
+                  <span class="text-xs font-semibold text-slate-600">Servidor + Manutenção:</span>
+                  <p class="text-[10px] text-slate-500">Mensalidade contínua</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-2xl sm:text-3xl font-black text-blue-600">R$ 79,90</span>
+                  <span class="text-xs text-slate-500">/mês</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2.5 mb-8 text-xs text-slate-700">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i><span>Suporte comercial</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i><span>Resposta rápida</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i><span>Setup básico configurado</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i><span>Monitoramento de servidor</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i><span>Infraestrutura estável</span></div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-200">
+            <a href="https://wa.me/5538999422060?text=Ol%C3%A1!%20Quero%20contratar%20o%20Plano%20Start%20(R$%20300%20+%20R$%2079,90/m%C3%AAs)." target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl text-xs font-extrabold flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white shadow-md transition-all">
+              <span>Contratar Plano Start</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- PLANO PRO (RECOMENDADO) -->
+        <div class="relative rounded-3xl p-8 bg-gradient-to-b from-slate-900 via-slate-900 to-blue-950 text-white shadow-2xl shadow-blue-600/20 ring-2 ring-blue-500 lg:-translate-y-2 flex flex-col justify-between">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-950 text-xs font-extrabold tracking-wider uppercase shadow-md flex items-center gap-1">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            RECOMENDADO
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-extrabold tracking-tight text-white">PLANO PRO</h3>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-blue-500/20 text-cyan-300 border border-blue-400/30">Mais Escolhido</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+              A escolha ideal para empresas em expansão que exigem resposta acelerada, backup diário e monitoramento ativo.
+            </p>
+
+            <div class="p-4 rounded-2xl mb-6 bg-white/5 border border-white/10">
+              <div class="flex items-baseline justify-between border-b pb-3 mb-3 border-white/10">
+                <span class="text-xs font-semibold text-slate-300">Criação & Setup:</span>
+                <span class="text-lg font-extrabold text-cyan-300">R$ 599</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <div>
+                  <span class="text-xs font-semibold text-slate-300">Servidor + Manutenção:</span>
+                  <p class="text-[10px] text-slate-400">Mensalidade contínua</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-2xl sm:text-3xl font-black text-cyan-300">R$ 150,00</span>
+                  <span class="text-xs text-slate-400">/mês</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2.5 mb-8 text-xs text-slate-200">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><strong class="text-white">Suporte prioritário</strong></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><strong class="text-white">Resposta acelerada</strong></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><strong class="text-white">Backup diário automático</strong></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-300"></i><span>Monitoramento ativo 24/7</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-300"></i><span>Alta estabilidade de conexão</span></div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-white/10">
+            <a href="https://wa.me/5538999422060?text=Ol%C3%A1!%20Quero%20contratar%20o%20Plano%20Pro%20(R$%20599%20+%20R$%20150,00/m%C3%AAs)." target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl text-xs font-extrabold flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-950 shadow-lg shadow-blue-500/30 transition-all hover:scale-[1.02]">
+              <span>Contratar Plano Pro</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- PLANO PREMIUM -->
+        <div class="relative rounded-3xl p-8 bg-white text-slate-900 border border-slate-200 shadow-lg flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-extrabold tracking-tight text-slate-900">PLANO PREMIUM</h3>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">Com IA Avançada</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-6">
+              Potência máxima com Inteligência Artificial generativa, suporte contínuo 24/7 e atendimento VIP.
+            </p>
+
+            <div class="p-4 rounded-2xl mb-6 bg-slate-50 border border-slate-200">
+              <div class="flex items-baseline justify-between border-b pb-3 mb-3 border-slate-200">
+                <span class="text-xs font-semibold text-slate-600">Criação & Setup:</span>
+                <span class="text-lg font-extrabold text-slate-900">R$ 1.670</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <div>
+                  <span class="text-xs font-semibold text-slate-600">Servidor + Manutenção:</span>
+                  <p class="text-[10px] text-slate-500">Mensalidade contínua</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-2xl sm:text-3xl font-black text-purple-600">R$ 400,00</span>
+                  <span class="text-xs text-slate-500">/mês</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2.5 mb-8 text-xs text-slate-700">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-600"></i><strong class="text-slate-900">Integração com IA Generativa</strong></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-600"></i><strong class="text-slate-900">Suporte 24/7</strong></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-600"></i><strong class="text-slate-900">Atendimento VIP</strong></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-600"></i><span>Monitoramento contínuo</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-600"></i><span>Alta performance para alto tráfego</span></div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-4 border-t border-slate-200">
+            <a href="https://wa.me/5538999422060?text=Ol%C3%A1!%20Quero%20contratar%20o%20Plano%20Premium%20com%20IA%20(R$%201.670%20+%20R$%20400,00/m%C3%AAs)." target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl text-xs font-extrabold flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white shadow-md transition-all">
+              <span>Contratar Plano Premium</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
+        
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-xl text-white">Prime<span class="text-blue-500">Connect</span> IA</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Especialistas em automação para WhatsApp com inteligência artificial e servidores sob medida. Conecte sua empresa, automatize conversas e simplifique suas vendas 24/7.
+          </p>
+          <div class="flex items-center gap-2 text-xs text-cyan-400 font-medium">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+            <span>Infraestrutura monitorada & segura</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Planos Sob Medida</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li>Plano Start: R$ 79,90/mês</li>
+            <li class="text-white font-semibold">Plano Pro (Recomendado): R$ 150,00/mês</li>
+            <li>Plano Premium (IA): R$ 400,00/mês</li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-5 space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Contatos Oficiais</h4>
+          <div class="space-y-2 text-xs text-slate-300">
+            <p class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>(38) 9 9942-2060</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>primeconnectia2026@yahoo.com</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i data-lucide="instagram" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>@prime.connectia</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 PrimeConnect IA. Todos os direitos reservados.</p>
+        <p>CONECTE. AUTOMATIZE. SIMPLIFIQUE.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= CHAT FLUTUANTE DE SUPORTE ================= -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end print:hidden">
+    <a href="https://wa.me/5538999422060" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 bg-gradient-to-r from-blue-600 to-slate-900 text-white rounded-full shadow-xl hover:scale-105 transition-all border border-cyan-400/40">
+      <div class="relative">
+        <i data-lucide="message-circle" class="w-6 h-6 text-cyan-300"></i>
+        <span class="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+        </span>
+      </div>
+      <div class="text-left">
+        <span class="text-xs font-bold block leading-tight">Suporte Imediato</span>
+        <span class="text-[10px] text-cyan-300 leading-tight">Online no WhatsApp</span>
+      </div>
+    </a>
+  </div>
+
+  <script>
+    lucide.createIcons();
+    const toggle = document.getElementById('mobile-toggle-html');
+    const menu = document.getElementById('mobile-menu-html');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+    }
+  </script>
+</body>
+</html>
