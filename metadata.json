@@ -1,0 +1,7 @@
+{
+  "name": "PrimeConnect IA - Automação WhatsApp & Chatbots Inteligentes",
+  "description": "Plataforma completa de automação para WhatsApp e chatbots com Inteligência Artificial. Conecte, automatize e simplifique o atendimento e vendas da sua empresa 24/7.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
