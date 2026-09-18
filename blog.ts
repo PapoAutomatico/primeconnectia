@@ -1,0 +1,128 @@
+import { BlogPost } from '../types';
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: '1',
+    slug: 'vantagens-ia-whatsapp-vendas',
+    title: 'Como a IA no WhatsApp Converte até 300% Mais Clientes Fora do Horário Comercial',
+    subtitle: 'Por que o atendimento em tempo real é o maior diferencial competitivo de empresas modernas.',
+    excerpt: 'Descubra como empresas que respondem leads nos primeiros 60 segundos têm até 7x mais chances de fechar negócio comparado às que demoram horas.',
+    category: 'Vendas',
+    date: '14 de Setembro de 2026',
+    readTime: '4 min de leitura',
+    author: {
+      name: 'Equipe PrimeConnect IA',
+      role: 'Especialistas em Automação',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=80',
+    },
+    relatedStat: {
+      number: '78%',
+      label: 'dos clientes compram da primeira empresa que responde no WhatsApp',
+    },
+    keyTakeaways: [
+      'Velocidade é a métrica mais decisiva para conversão no WhatsApp.',
+      'A IA entende contexto e intenção de compra, não apenas palavras-chave fixas.',
+      'Disponibilidade 24 horas por dia sem sobrecarregar atendentes humanos.',
+      'Redução do custo de aquisição de clientes (CAC) ao reaproveitar tráfego pago.',
+    ],
+    content: [
+      'No cenário atual de consumo, o cliente não tolera mais esperar horas para receber uma resposta. Quando um lead clica em um anúncio no Instagram ou Google e envia uma mensagem no WhatsApp às 21h ou no domingo de manhã, a expectativa de resposta é imediata.',
+      'Estudos de comportamento de compra indicam que 78% dos consumidores fecham negócio com a primeira empresa que oferece um atendimento ágil e resolutivo. Demorar 30 minutos para responder já diminui a taxa de conversão em mais de 60%.',
+      'É exatamente aqui que a inteligência artificial da PrimeConnect IA transforma o jogo. Em vez de uma resposta automática fria dizendo "nosso horário de atendimento é de 8h às 18h", o chatbot com IA inicia uma conversa fluida, entende a necessidade do lead, apresenta os produtos ou planos adequados e pode até mesmo gerar o link de pagamento ou agendar uma demonstração.',
+      'Ao acordar na segunda-feira, sua equipe comercial não recebe dezenas de leads frios e impacientes, mas sim reuniões agendadas, pedidos pagos e clientes já qualificados prontos para o fechamento.',
+    ],
+  },
+  {
+    id: '2',
+    slug: 'menus-numericos-chatbot-conversao',
+    title: 'O Poder dos Menus Numéricos (1, 2, 3): Como Direcionar Clientes e Vender em Segundos no WhatsApp',
+    subtitle: 'A agilidade das opções numéricas claras aliada à automação inteligente para eliminar a indecisão do cliente.',
+    excerpt: 'Descubra como os menus numerados [1], [2], [3] guiam o cliente sem complicação, reduzem o tempo de espera a zero e garantem que cada lead encontre a resposta certa.',
+    category: 'Tecnologia',
+    date: '08 de Setembro de 2026',
+    readTime: '4 min de leitura',
+    author: {
+      name: 'Equipe PrimeConnect IA',
+      role: 'Especialistas em Automação',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80',
+    },
+    relatedStat: {
+      number: '92%',
+      label: 'dos clientes preferem opções numéricas objetivas para agilizar o atendimento inicial',
+    },
+    keyTakeaways: [
+      'Menus numéricos (1, 2, 3...) guiam o cliente com total clareza e sem atrito.',
+      'Eliminam a hesitação do lead e oferecem caminhos diretos de compra e agendamento.',
+      'Redução imediata do tempo de resposta para menos de 2 segundos com triagem instantânea.',
+      'Perfeita integração entre menus numerados, inteligência artificial e transbordo para atendentes humanos.',
+    ],
+    content: [
+      'Quando um cliente entra em contato pelo WhatsApp, a principal prioridade é agilidade e objetividade. Apresentar um menu numérico estruturado com opções como [1] Ver Planos, [2] Agendar Demonstração, [3] Dúvidas Frequentes ou [4] Falar com Atendente permite que ele escolha sua necessidade com apenas um toque.',
+      'Estudos de usabilidade demonstram que menus numéricos bem desenhados diminuem drasticamente o esforço do usuário. Em vez de ficar em dúvida sobre o que digitar ou esperar um humano livre, o cliente aperta "1" ou "2" e recebe a resposta, catálogo ou link de pagamento no mesmo instante.',
+      'Na PrimeConnect IA, nossos chatbots unem a praticidade imbatível dos menus numerados à capacidade inteligente de automação. Cada opção é configurada sob medida para o nicho da sua empresa, enviando imagens, áudios explicativos e orçamentos automaticamente.',
+      'E sempre que o cliente precisar de uma negociação personalizada ou desejar falar diretamente com a sua equipe, o menu oferece a opção direta de transbordo para o atendente humano com todo o histórico preservado.',
+    ],
+  },
+  {
+    id: '3',
+    slug: 'servidores-sob-medida-seguranca-estabilidade',
+    title: 'Servidores Sob Medida para WhatsApp: Como Evitar Quedas e Bloqueios Operacionais',
+    subtitle: 'A importância da infraestrutura dedicada para automações profissionais e seguras.',
+    excerpt: 'Descubra por que a PrimeConnect IA oferece planos com servidores e manutenção dedicados para garantir alta estabilidade e proteção para o seu número.',
+    category: 'Tecnologia',
+    date: '01 de Setembro de 2026',
+    readTime: '4 min de leitura',
+    author: {
+      name: 'Equipe PrimeConnect IA',
+      role: 'Engenharia de Infraestrutura',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=80',
+    },
+    relatedStat: {
+      number: '99.9%',
+      label: 'de Uptime em servidores monitorados e atualizados ativamente',
+    },
+    keyTakeaways: [
+      'Plataformas genéricas compartilhadas sofrem com quedas coletivas de instâncias.',
+      'Servidores isolados garantem velocidade de processamento e isolamento de dados.',
+      'Monitoramento ativo e backups automáticos garantem a continuidade do negócio.',
+      'Rotinas inteligentes de aquecimento e envio respeitam as diretrizes do WhatsApp.',
+    ],
+    content: [
+      'Muitos empresários começam a testar automação em ferramentas baratas ou gratuitas e rapidamente enfrentam dois pesadelos: instabilidade constante (o robô para de responder no meio de um lançamento) ou risco de banimento do número do WhatsApp.',
+      'Na PrimeConnect IA, levamos a infraestrutura a sério. Nossos planos incluem servidor sob medida com manutenção preventiva contínua. Isso significa que o processamento do seu chatbot ocorre em um ambiente isolado, com monitoramento ativo 24 horas por dia.',
+      'Se houver qualquer oscilação ou atualização de protocolo no WhatsApp, nossa equipe técnica intervém imediatamente antes que o atendimento da sua empresa seja prejudicado.',
+      'Com backup diário e resposta acelerada no Plano Pro e Premium, você tem a certeza de que seu canal de vendas mais valioso nunca dorme e nunca falha.',
+    ],
+  },
+  {
+    id: '4',
+    slug: 'recuperacao-de-carrinhos-e-leads-whatsapp',
+    title: 'Estratégia de Recuperação Automática: Como Resgatar Vendas Perdidas em Menos de 5 Minutos',
+    subtitle: 'Gatilhos inteligentes e mensagens personalizadas para reengajar contatos frios.',
+    excerpt: 'Aprenda a configurar fluxos no WhatsApp que recuperam orçamentos não respondidos e carrinhos abandonados de forma cordial e persuasiva.',
+    category: 'Vendas',
+    date: '25 de Agosto de 2026',
+    readTime: '3 min de leitura',
+    author: {
+      name: 'Carlos Oliveira',
+      role: 'Growth Hacker',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80',
+    },
+    relatedStat: {
+      number: '34%',
+      label: 'de recuperação média de orçamentos parados com follow-ups inteligentes',
+    },
+    keyTakeaways: [
+      'Follow-up manual é frequentemente esquecido ou executado tarde demais.',
+      'A automação atua nos momentos de maior propensão de compra.',
+      'Oferta de cupons, esclarecimento de objeções de frete e suporte no pagamento.',
+      'Mensagens personalizadas com o nome do cliente e produto consultado.',
+    ],
+    content: [
+      'Quantas vezes um cliente pediu um orçamento ou tirou uma dúvida pelo WhatsApp e sumiu? Em média, 65% dos leads em negociação esfriam simplesmente porque a equipe comercial não teve tempo de fazer o follow-up no momento certo.',
+      'Com a automação da PrimeConnect IA, você define regras de reengajamento inteligente: se o cliente não responder em 20 minutos após o envio da proposta, a IA envia uma mensagem amigável perguntando se restou alguma dúvida sobre formas de pagamento.',
+      'Se necessário, o sistema pode aplicar um cupom de desconto com validade de 2 horas ou acionar um atendente humano para ligar imediatamente.',
+      'Essa cadência automatizada transforma o que antes era esforço manual em uma esteira previsível de faturamento extra todos os meses.',
+    ],
+  },
+];
